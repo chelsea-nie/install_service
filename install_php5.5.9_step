@@ -1,0 +1,18 @@
+
+ubuntu 16.04 php5.5.9安装步骤
+
+需要安装的包：freetype-2.4.0 libpng-1.6.9 libiconv-1.14 jpeg-9a zlib-1.2.8 libmcrypt-2.5.8 libgd-2.1.0 pcre-8.34
+
+需要安装的依赖：apt-get -y install libxml2* libssl-dev libsslcommon2-dev libxpm-dev libtidy-dev
+
+cd /usr/local/src/
+
+tar xf php-5.5.9.tar.gz
+
+cd php-5.5.9
+
+./configure  --prefix=$HOME/php/ --with-config-file-path=$HOME/php/etc --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-iconv=$HOME/libiconv-1.14/ --with-freetype-dir=$HOME/freetype-2.4.0/ --with-jpeg-dir=$HOME/jpeg-9a/ --with-png-dir=$HOME/libpng-1.6.9/ --with-zlib=$HOME/zlib-1.2.8/ --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-fpm --enable-mbstring --with-mcrypt=$HOME/libmcrypt-2.5.8/ --with-gd=$HOME/libgd-2.1.0/ --enable-gd-native-ttf --with-openssl --enable-soap --enable-ftp --enable-sockets --with-pdo-mysql=mysqlnd --with-pcre-dir=$HOME/pcre-8.34/ --with-xmlrpc --enable-zip --enable-calendar --enable-maintainer-zts --enable-wddx --enable-opcache --with-tidy --with-xpm-dir=/usr/lib/
+
+make && make install
+
+##$HOME这个换成安装目录即可
